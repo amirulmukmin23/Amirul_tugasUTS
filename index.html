@@ -447,6 +447,31 @@
 			</section>
 		<!-- Contact Section End -->
 
+		<script>
+			document.getElementById('main_contact_form').addEventListener('submit', function(e) {
+				e.preventDefault();
+				const infoDiv = document.getElementById('success_fail_info');
+
+				infoDiv.innerHTML = `
+					<div class="alert alert-success text-center" role="alert" id="successAlert">
+						Pesan berhasil terkirim!
+					</div>
+				`;
+				e.target.reset();
+			
+				setTimeout(() => {
+					const alertBox = document.getElementById('successAlert');
+					if (alertBox) {
+						alertBox.classList.add('fade-out');
+					}
+				}, 1500);
+			
+				setTimeout(() => {
+					infoDiv.innerHTML = '';
+				}, 2000);
+			});
+		</script>
+				
 		<!-- Footer Section Start -->
 			<footer class="footer-area">
 				<div class="container">
